@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bhavesh-nodejs
+  labels:
+    app: bhavesh-nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bhavesh-nodejs
+  template:
+    metadata:
+      labels:
+        app: bhavesh-nodejs
+    spec:
+      containers:
+      - name: bhavesh-nodejs
+        image: ladbhavesh/nodejsv2:v3.3
+        ports:
+        - containerPort: 8081
